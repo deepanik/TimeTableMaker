@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Time Table Maker</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <button type="button" id="saveButton" onclick="saveAsImage()">Save as Image</button>
+            <h2>Create Time Table</h2>
+            <form id="timetable-form">
+                <label for="period">Period:</label>
+                <input type="text" id="period" required>
+
+                <label for="class">Class:</label>
+                <input type="text" id="class" required>
+
+                <button type="button" onclick="createHeaders()">OK</button>
+
+                <label for="date">Date (dd.mm.yy):</label>
+                <input type="text" id="date" required>
+
+                <label for="day">Day:</label>
+                <input type="text" id="day" required>
+
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" required>
+
+                <button type="button" onclick="createTimetable()">Add Entry</button>
+
+            </form>
+        </div>
+
+        <div class="timetable-container">
+            <div id="periodic-heading" style="text-align: center; margin-bottom: 10px; color: #3366cc;"></div>
+            <div id="class-heading" style="text-align: center; margin-bottom: 20px; color: #3366cc;"></div>
+            <table id="timetable-table" class="timetable-grid">
+                <!-- Header row -->
+                <tr id="header-row">
+                    <th>Date</th>
+                    <th>Day</th>
+                    <th>Subject</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
